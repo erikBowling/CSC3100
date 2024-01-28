@@ -10,6 +10,11 @@
     Got states from here
     https://www.freeformatter.com/usa-state-list-html-select.html
 
+    Resources used:
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel
+    https://www.w3schools.com/cssref/css3_pr_mediaquery.php
+    https://getbootstrap.com/docs/5.3/utilities/flex/#enable-flex-behaviors
+
 -->
 <html lang="en">
 <head>
@@ -23,25 +28,31 @@
         #registrationForm > label {
             margin: 0.5em 0 0 0;
         }
+
+        @media screen and (max-width: 650px) {
+            #registrationForm {
+                width: 100%;
+            }
+        }
     </style>
 
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid d-flex flex-column justify-content-center align-items-center">
         <h1 class="">Registration Form</h1>
         <form id="registrationForm" class="col-4">
             <label for="txtFirstName">First Name</label>
-            <input class="form-control" id="txtFirstName" type="text" aria-label="First Name">
+            <input class="form-control bg" id="txtFirstName" type="text" placeholder="Enter first name" aria-label="First Name" required/>
 
             <label for="txtLastName">Last Name</label>
-            <input class="form-control" id="txtLastName" type="text" aria-label="Last Name">
+            <input class="form-control" id="txtLastName" type="text" placeholder="Enter last name" aria-label="Last Name" required/>
 
             <label for="txtStreetAddressOne">Street Address</label>
-            <input class="form-control" id="txtStreetAddressOne" type="text" aria-label="Street Address one">
-            <input class="form-control" id="txtStreetAddressTwo" type="text" aria-label="Street Address Two">
+            <input class="form-control" id="txtStreetAddressOne" type="text" placeholder="Enter street address 1" aria-label="Street Address one" required/>
+            <input class="form-control" id="txtStreetAddressTwo" type="text" placeholder="Enter street address 2" aria-label="Street Address Two">
 
             <label for="txtCity">Last Name</label>
-            <input class="form-control" id="txtCity" type="text" aria-label="City">
+            <input class="form-control" id="txtCity" type="text" placeholder="Enter city" aria-label="City" required/>
 
             <label for="selectState">State</label>
             <select id="selectState" class="form-control">
@@ -99,18 +110,18 @@
             </select>
 
             <label for="txtZipCode">Zip Code</label>
-            <input class="form-control" id="txtZipCode" type="text" aria-label="Zip Code">
+            <input class="form-control" id="txtZipCode" type="text" placeholder="Enter zip code" aria-label="Zip Code" required/>
 
             <label for="telPhoneNumber">Phone Number</label>
-            <input class="form-control" id="telPhoneNumber" type="tel" aria-label="Telephone Number">
+            <input class="form-control" id="telPhoneNumber" type="tel" placeholder="Enter phone number" aria-label="Telephone Number" required/>
 
             <label for="emailEmail">Email</label>
-            <input class="form-control" id="emailEmail" type="email" aria-label="Email Address">
+            <input class="form-control" id="emailEmail" type="email" placeholder="Enter email address" aria-label="Email Address" required/>
 
             <label for="pwdPassword">Password</label>
-            <input class="form-control" id="pwdPassword" type="tel" aria-label="Telephone Number">
+            <input class="form-control" id="pwdPassword" type="password" placeholder="Enter password" aria-label="Telephone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required/>
 
-            <button class="btn btn-primary mt-2 form-control" type="button">Submit</button>
+            <button class="btn btn-primary mt-2 form-control" type="submit">Submit</button>
         </form>
     </div>
 
